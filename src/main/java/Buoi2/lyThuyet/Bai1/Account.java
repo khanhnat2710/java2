@@ -19,13 +19,13 @@ public class Account {
 
     public Account deposit(double amount) {
         if (amount > 0) {
-            balance += amount;
+            this.balance += amount;
         }
         return this;
     }
 
     public void transfer(Account target, double amount) {
-        if (amount > 0 && amount <= balance) {
+        if (amount > 0 && target != null && amount <= balance) {
             this.balance -= amount;
             target.balance += amount;
             logTransaction(target, amount);

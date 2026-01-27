@@ -7,7 +7,7 @@ public class Account {
 
     public Account(String accountNumber, String owner) {
         //1.contructor chaining
-        this("123456789", "Nguyen Van A", 0);
+        this("123456789", "Nguyen Van A", 0.0);
     }
 
     public Account(String accountNumber, String owner, double balance) {

@@ -20,14 +20,16 @@ public class Account {
     public Account deposit(double amount) {
         if (amount > 0) {
             balance += amount;
-        } else {
-            System.out.println("So tien nap vao khong hop le!");
         }
         return this;
     }
 
     public void transfer(Account target, double amount) {
-
+        if (amount > 0 && amount <= balance) {
+            this.balance -= amount;
+            target.balance += amount;
+            logTransaction(target, amount);
+        }
     }
 
     private void logTransaction(Account target, double amount) {
